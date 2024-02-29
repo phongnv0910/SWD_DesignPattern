@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business Layer", "Business Layer\Business Layer.csproj", "{31A5D4E9-C7EF-4538-8F81-96066A5DC213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "Business Layer\BusinessLayer.csproj", "{31A5D4E9-C7EF-4538-8F81-96066A5DC213}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data Access Layer", "Data Access Layer\Data Access Layer.csproj", "{A73E76C8-B6BB-47A9-8259-456F93DFE180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "Data Access Layer\DataAccessLayer.csproj", "{A73E76C8-B6BB-47A9-8259-456F93DFE180}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{3B6D2BF8-D989-40EA-9F5A-4CFAEB0046E8}"
 EndProject
