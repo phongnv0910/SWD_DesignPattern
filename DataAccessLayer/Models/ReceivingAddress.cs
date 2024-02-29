@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Data_Access_Layer.Models
+namespace DataAccessLayer.Models
 {
     public partial class ReceivingAddress
     {
