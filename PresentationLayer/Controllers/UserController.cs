@@ -19,10 +19,20 @@ namespace PresentationLayer.Controllers
 
         [HttpGet]
         [HttpPost]
-        public IActionResult Index(int id)
+        public IActionResult GetUser(int id)
         {
             User user = _userService.GetUser(id);
             return View();
         }
+
+        [HttpGet]
+        [HttpPost]
+        public IActionResult UpdateUser(int id)
+        {
+            User user = _userService.GetUser(id);
+            return View();
+        }
+
+
     }
 }

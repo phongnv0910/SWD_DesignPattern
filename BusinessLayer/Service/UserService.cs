@@ -23,5 +23,16 @@ namespace BusinessLayer.Service
         {
             return _userRepository.GetById(Id);
         }
+
+        public bool UpdateUser(int Id)
+        {
+            var user = _userRepository.GetById(Id);
+            if (user != null)
+            {
+                _userRepository.Delete(user);
+                return true;
+            }
+            return false;
+        }
     }
 }
