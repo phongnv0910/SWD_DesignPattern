@@ -27,7 +27,7 @@ namespace PresentationLayer.Controllers
             return View(blogs);
         }
 
-        public IActionResult GetById(int id)
+        public IActionResult Blog(int id)
         {
             Blog blog = _blogService.GetBlog(id);
             if (blog == null)
