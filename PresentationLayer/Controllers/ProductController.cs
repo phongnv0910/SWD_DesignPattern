@@ -1,30 +1,24 @@
 ﻿using Business_Layer.Service;
 using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace PresentationLayer.Controllers
 {
-    public class HomeController : Controller
+    public class ProductController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+    
+        private readonly ILogger<ProductController> _logger;
         private readonly HomeService _homeService;
-        public HomeController(ILogger<HomeController> logger, HomeService homeService)
+        public ProductController(ILogger<ProductController> logger, HomeService homeService)
         {
             _logger = logger;
             _homeService = homeService;
 
         }
 
-        public IActionResult Index()
-        {
-            var productList = _homeService.GetListProduct();
-
-            return View(productList);
-        }
         [HttpGet]
         [HttpPost]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await _homeService.DeleteProduct(id);
 
@@ -32,14 +26,11 @@ namespace PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateProduct(Product product)
+        public async Task<IActionResult> Update(Product product)
         {
             await _homeService.UpdateProduct(product);
 
             return RedirectToAction("Index", "Home");
         }
-
     }
-
-
 }

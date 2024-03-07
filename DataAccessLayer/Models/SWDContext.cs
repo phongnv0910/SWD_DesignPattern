@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
-namespace Data_Access_Layer.Models
+namespace DataAccessLayer.Models
 {
     public partial class SWDContext : DbContext
     {
@@ -37,14 +36,8 @@ namespace Data_Access_Layer.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var config = new ConfigurationBuilder()
-                    .AddJsonFile("appsettings.json")
-                    .Build();
-
-                if (!optionsBuilder.IsConfigured)
-                {
-                    optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-                }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server=MSI\\SQLEXPRESS;database=SWD;user=sa;password=123;TrustServerCertificate=true;");
             }
         }
 
@@ -54,7 +47,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("Category");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(255)
@@ -65,7 +58,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("Customer");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(255)
@@ -84,8 +77,6 @@ namespace Data_Access_Layer.Models
 
             modelBuilder.Entity<DiscountPr>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
-
                 entity.ToTable("DiscountPr");
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
@@ -116,8 +107,6 @@ namespace Data_Access_Layer.Models
 
             modelBuilder.Entity<Image>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
-
                 entity.Property(e => e.Link)
                     .HasMaxLength(255)
                     .IsUnicode(false);
@@ -130,8 +119,6 @@ namespace Data_Access_Layer.Models
 
             modelBuilder.Entity<ImportBill>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
-
                 entity.ToTable("ImportBill");
 
                 entity.Property(e => e.DateCreated).HasColumnType("date");
@@ -147,8 +134,6 @@ namespace Data_Access_Layer.Models
 
             modelBuilder.Entity<ImportBillDetail>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
-
                 entity.Property(e => e.ExpiredDate).HasColumnType("date");
 
                 entity.Property(e => e.ImportPrice).HasColumnType("decimal(18, 2)");
@@ -168,7 +153,7 @@ namespace Data_Access_Layer.Models
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");
 
@@ -204,7 +189,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("OrderDetail");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
 
@@ -223,7 +208,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("PaymentMethod");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Code)
                     .HasMaxLength(50)
@@ -243,7 +228,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("Product");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Color)
                     .HasMaxLength(50)
@@ -257,7 +242,6 @@ namespace Data_Access_Layer.Models
             modelBuilder.Entity<ProductInfo>(entity =>
             {
                 entity.ToTable("ProductInfo");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Description).HasColumnType("text");
 
@@ -279,7 +263,7 @@ namespace Data_Access_Layer.Models
             {
                 entity.ToTable("ReceivingAddress");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(255)
@@ -294,7 +278,6 @@ namespace Data_Access_Layer.Models
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.ToTable("Role");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(255)
@@ -304,7 +287,6 @@ namespace Data_Access_Layer.Models
             modelBuilder.Entity<Style>(entity =>
             {
                 entity.ToTable("Style");
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(255)
@@ -341,7 +323,6 @@ namespace Data_Access_Layer.Models
             {
                 entity.HasIndex(e => e.UserName, "UQ__Users__C9F28456F0915254")
                     .IsUnique();
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreateDate).HasColumnType("date");
 

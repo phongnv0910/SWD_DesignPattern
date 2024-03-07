@@ -1,4 +1,4 @@
-﻿using Data_Access_Layer.Models;
+﻿using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,7 @@ namespace Data_Access_Layer.Repository
         public ProductRepository(SWDContext context) : base(context)
         {
         }
+
     }
 
 }
