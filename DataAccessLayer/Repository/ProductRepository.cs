@@ -13,6 +13,10 @@ namespace Data_Access_Layer.Repository
         public ProductRepository(SWDContext context) : base(context)
         {
         }
+        public async Task<int> SaveChangesAsync()
+        {
+            return await Context.SaveChangesAsync();
+        }
     }
 
 }

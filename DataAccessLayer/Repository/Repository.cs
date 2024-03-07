@@ -15,6 +15,11 @@ namespace Data_Access_Layer.Repository
             Context = context;
         }
 
+        public async Task<int> SaveChangesAsync()
+        {
+            return await Context.SaveChangesAsync();
+        }
+
         public TEntity GetById(int id)
         {
             return Context.Set<TEntity>().Find(id) ?? throw new Exception("Entity not found.");
