@@ -10,4 +10,10 @@
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Blog\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Product\" />
+  </ItemGroup>
+
 </Project>
