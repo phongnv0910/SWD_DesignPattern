@@ -19,10 +19,27 @@ namespace BusinessLayer.Service
             _userRepository = userRepository;
         }
 
-        public User GetUser(int Id)
+		public List<User> GetListUser()
+		{
+            return _userRepository.GetAll().ToList();
+		}
+
+		public User GetUser(int Id)
         {
             return _userRepository.GetById(Id);
         }
+
+        public async Task Update(User user)
+        {
+            var userCheck = _userRepository.GetById(user.Id);
+            if (userCheck != null)
+            {
+                userCheck.Name = user.Name;
+                _userRepository.Update(userCheck);
+                await _userRepository.SaveChangesAsync();
+            }
+        }
+
 
         public bool UpdateUser(int Id)
         {

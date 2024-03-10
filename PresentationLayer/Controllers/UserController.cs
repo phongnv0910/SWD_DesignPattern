@@ -17,20 +17,26 @@ namespace PresentationLayer.Controllers
 
         }
 
-        [HttpGet]
+		public IActionResult Index()
+		{
+			var users = _userService.GetListUser();
+
+			return View(users);
+		}
+
         [HttpPost]
-        public IActionResult GetUser(int id)
+        [HttpGet]
+        public async Task<IActionResult> ViewDetails(int id)
         {
             User user = _userService.GetUser(id);
-            return View();
+            return View(user);
         }
 
-        [HttpGet]
         [HttpPost]
-        public IActionResult UpdateUser(int id)
+        public async Task<IActionResult> Update(User user)
         {
-            User user = _userService.GetUser(id);
-            return View();
+             await _userService.Update(user);
+            return RedirectToAction("Index", "User");
         }
 
 

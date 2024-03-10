@@ -1,11 +1,11 @@
 ﻿@{
     Layout = "~/Views/DashLayout.cshtml";
 }
-@model DataAccessLayer.Models.Product
+@model DataAccessLayer.Models.User
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    var product = Model;
+    var user = Model;
 }
 <div class="container-fluid dashboard-content ">
 
@@ -19,8 +19,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">List all product</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Update id: @product.Id</li>
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">List all user</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Update user id: @user.Id</li>
                         </ol>
                     </nav>
                 </div>
@@ -44,42 +44,35 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12">
                                 <div class="card card-default">
-                                    <div class="card-heading"><h2 class="card-title"><span>Update Product</span></h2></div>
+                                    <div class="card-heading"><h2 class="card-title"><span>Update</span></h2></div>
                                     <div class="card-body">
                                         <div class="card-body">
-                                            <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Product" asp-action="Update" method="post">
+                                            <form class="form-horizontal" enctype="multipart/form-data" asp-controller="User" asp-action="Update" method="post">
                                                 <div class="form-group mb-4">
                                                     <div class="row">
                                                         <label class="col-md-4">Id :</label>
                                                         <div class="col-md-8">
-                                                            <input class="form-control" name="Id" type="text" value="@product.Id" readonly>
+                                                            <input class="form-control" name="Id" type="text" value="@user.Id" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-4">
                                                     <div class="row">
-                                                        <label class="col-md-4">Color :</label>
+                                                        <label class="col-md-4">UserName :</label>
                                                         <div class="col-md-8">
-                                                            <input class="form-control" name="Color" type="text" value="@product.Color" required>
+                                                            <input class="form-control" name="UserName" type="text" value="@user.UserName" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-4">
                                                     <div class="row">
-                                                        <label class="col-md-4">Quantity :</label>
+                                                        <label class="col-md-4">Name :</label>
                                                         <div class="col-md-8">
-                                                            <textarea rows="4" cols="5" name="Quantity" class="form-control" required>@product.Quantity</textarea>
+                                                            <textarea rows="4" cols="5" name="Name" class="form-control" required>@user.Name</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-4">
-                                                    <div class="row">
-                                                        <label class="col-md-4">Size :</label>
-                                                        <div class="col-md-8">
-                                                            <input class="form-control" name="Size" type="number" min="0" step="0.01" value="@product.Size" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
                                                 <div class="form-group mb-4">
                                                     <div class="row">
                                                         <div class="mx-auto">
