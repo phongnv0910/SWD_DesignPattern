@@ -10,9 +10,9 @@ namespace Business_Layer.Service
 {
     public class HomeService
     {
-        private readonly ProductRepository _productRepository;
+        private readonly ProductDAO _productRepository;
 
-        public HomeService(ProductRepository productRepository)
+        public HomeService(ProductDAO productRepository)
         {
             _productRepository = productRepository;
         }

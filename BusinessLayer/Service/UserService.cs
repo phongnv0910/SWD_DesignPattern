@@ -12,9 +12,9 @@ namespace BusinessLayer.Service
 
     public class UserService
     {
-        private readonly UserRepository _userRepository;
+        private readonly UserDAO _userRepository;
 
-        public UserService(UserRepository userRepository)
+        public UserService(UserDAO userRepository)
         {
             _userRepository = userRepository;
         }

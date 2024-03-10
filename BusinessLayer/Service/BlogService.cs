@@ -11,9 +11,9 @@ namespace BusinessLayer.Service
     
     public class BlogService
     {
-        private readonly BlogRepository _blogRepository;
+        private readonly BlogDAO _blogRepository;
 
-        public BlogService(BlogRepository blogRepository)
+        public BlogService(BlogDAO blogRepository)
         {
             _blogRepository = blogRepository;
         }
