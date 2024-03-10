@@ -5,9 +5,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{3B6D2BF8-D989-40EA-9F5A-4CFAEB0046E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{BD296F45-728E-4F97-9317-7D76FF31357D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{BD296F45-728E-4F97-9317-7D76FF31357D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{BB3B8B9C-A368-4011-ABF1-3B36E04E088E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{BB3B8B9C-A368-4011-ABF1-3B36E04E088E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
