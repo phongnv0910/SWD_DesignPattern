@@ -17,6 +17,8 @@ builder.Services.AddScoped<HomeService>();
 builder.Services.AddScoped<BlogService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<ProductService>();
+
 
 
 var app = builder.Build();
