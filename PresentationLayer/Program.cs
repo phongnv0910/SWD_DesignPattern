@@ -13,11 +13,11 @@ builder.Services.AddDbContext<SWDContext>();
 builder.Services.AddScoped<ProductDAO>();
 builder.Services.AddScoped<UserDAO>();
 builder.Services.AddScoped<BlogDAO>();
-builder.Services.AddScoped<HomeService>();
-builder.Services.AddScoped<BlogService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<HomeBus>();
+builder.Services.AddScoped<BlogBus>();
+builder.Services.AddScoped<UserBus>();
+builder.Services.AddScoped<UserBus>();
+builder.Services.AddScoped<ProductBus>();
 
 
 

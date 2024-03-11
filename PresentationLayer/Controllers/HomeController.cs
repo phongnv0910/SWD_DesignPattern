@@ -8,8 +8,8 @@ namespace PresentationLayer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly HomeService _homeService;
-        public HomeController(ILogger<HomeController> logger, HomeService homeService)
+        private readonly HomeBus _homeService;
+        public HomeController(ILogger<HomeController> logger, HomeBus homeService)
         {
             _logger = logger;
             _homeService = homeService;

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace BusinessLayer.Service
 {
     
-    public class BlogService
+    public class BlogBus
     {
         private readonly BlogDAO _blogRepository;
 
-        public BlogService(BlogDAO blogRepository)
+        public BlogBus(BlogDAO blogRepository)
         {
             _blogRepository = blogRepository;
         }

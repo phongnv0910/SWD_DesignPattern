@@ -9,8 +9,8 @@ namespace PresentationLayer.Controllers
     {
 
         private readonly ILogger<UserController> _logger;
-        private readonly UserService _userService;
-        public UserController(ILogger<UserController> logger, UserService userService)
+        private readonly UserBus _userService;
+        public UserController(ILogger<UserController> logger, UserBus userService)
         {
             _logger = logger;
             _userService = userService;

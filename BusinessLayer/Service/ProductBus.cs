@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Business_Layer.Service
 {
-	public class ProductService
+	public class ProductBus
 	{
 		private readonly ProductDAO _productRepository;
 
-		public ProductService(ProductDAO productRepository)
+		public ProductBus(ProductDAO productRepository)
 		{
 			_productRepository = productRepository;
 		}
