@@ -8,8 +8,8 @@ namespace PresentationLayer.Controllers
     {
     
         private readonly ILogger<ProductController> _logger;
-        private readonly ProductService _productService;
-        public ProductController(ILogger<ProductController> logger, ProductService productService)
+        private readonly ProductBus _productService;
+        public ProductController(ILogger<ProductController> logger, ProductBus productService)
         {
             _logger = logger;
 			_productService = productService;

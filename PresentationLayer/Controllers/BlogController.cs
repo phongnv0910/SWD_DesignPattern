@@ -9,9 +9,9 @@ namespace PresentationLayer.Controllers
     {
         private readonly ILogger<BlogController> _logger;
 
-        private readonly BlogService _blogService;
+        private readonly BlogBus _blogService;
 
-        public BlogController(ILogger<BlogController> logger, BlogService blogService)
+        public BlogController(ILogger<BlogController> logger, BlogBus blogService)
         {
             _logger = logger;
             _blogService = blogService;

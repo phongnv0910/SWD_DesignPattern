@@ -8,11 +8,11 @@ using Data_Access_Layer.Repository;
 
 namespace Business_Layer.Service
 {
-    public class HomeService
+    public class HomeBus
     {
         private readonly ProductDAO _productRepository;
 
-        public HomeService(ProductDAO productRepository)
+        public HomeBus(ProductDAO productRepository)
         {
             _productRepository = productRepository;
         }

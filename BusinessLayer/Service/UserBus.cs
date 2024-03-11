@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace BusinessLayer.Service
 {
 
-    public class UserService
+    public class UserBus
     {
         private readonly UserDAO _userRepository;
 
-        public UserService(UserDAO userRepository)
+        public UserBus(UserDAO userRepository)
         {
             _userRepository = userRepository;
         }
