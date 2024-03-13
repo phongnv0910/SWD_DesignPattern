@@ -9,6 +9,7 @@ namespace DataAccessLayer.Models
         {
             OrderDetails = new HashSet<OrderDetail>();
             ProductInfos = new HashSet<ProductInfo>();
+            FeedBacks = new HashSet<FeedBack>();
         }
 
         public int Id { get; set; }
@@ -18,5 +19,6 @@ namespace DataAccessLayer.Models
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<ProductInfo> ProductInfos { get; set; }
+        public virtual ICollection<FeedBack> FeedBacks { get; set; }
     }
 }

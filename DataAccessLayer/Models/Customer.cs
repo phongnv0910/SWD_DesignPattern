@@ -9,6 +9,7 @@ namespace DataAccessLayer.Models
         {
             Orders = new HashSet<Order>();
             ReceivingAddresses = new HashSet<ReceivingAddress>();
+            FeedBacks = new HashSet<FeedBack>();
         }
 
         public int Id { get; set; }
@@ -16,6 +17,9 @@ namespace DataAccessLayer.Models
         public string? Email { get; set; }
         public string? Address { get; set; }
         public DateTime? Dob { get; set; }
+
+        public virtual ICollection<FeedBack> FeedBacks { get; set; }
+
 
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<ReceivingAddress> ReceivingAddresses { get; set; }
