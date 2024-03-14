@@ -29,7 +29,7 @@ namespace PresentationLayer.Controllers
         {
             await _productService.DeleteProduct(id);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Product");
         }
 
         [HttpPost]
