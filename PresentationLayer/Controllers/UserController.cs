@@ -40,5 +40,16 @@ namespace PresentationLayer.Controllers
         }
 
 
+
+        [HttpPost]
+        [HttpGet]
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = _userService.Delete(id);
+            return RedirectToAction("Index", "User");
+        }
+
+
     }
 }

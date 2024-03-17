@@ -51,5 +51,17 @@ namespace BusinessLayer.Service
             }
             return false;
         }
+
+
+        public bool Delete(int Id)
+        {
+            var user = _userRepository.GetById(Id);
+            if (user != null)
+            {
+                _userRepository.Delete(user);
+                return true;
+            }
+            return false;
+        }
     }
 }
