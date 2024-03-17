@@ -4,7 +4,7 @@ namespace PresentationLayer.Controllers
 {
     public class AdminController : Controller
     {
-        public IActionResult Login(string account, string )
+        public IActionResult Login(string account, string password)
         {
             return View();
         }

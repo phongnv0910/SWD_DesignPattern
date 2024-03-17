@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/DashLayout.cshtml";
+}
+@model DataAccessLayer.Models.User
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    var user = Model;
+}
+<div class="container-fluid dashboard-content ">
+
+    <!-- pageheader  -->
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+                <h2 class="pageheader-title">Quản Lý  </h2>
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">List all user</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Update user id: @user.Id</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <main role="main">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing" style="background: white">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Add / Manage </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area add-manage-product-2">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12">
+                                <div class="card card-default">
+                                    <div class="card-heading"><h2 class="card-title"><span>Update</span></h2></div>
+                                    <div class="card-body">
+                                        <div class="card-body">
+                                            <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Profile" asp-action="UpdateProfile" method="post">
+                                                <div class="form-group mb-4">
+                                                    <div class="row">
+                                                        <label class="col-md-4">Id :</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control" name="Id" type="text" value="@user.Id" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <div class="row">
+                                                        <label class="col-md-4">UserName :</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control" name="UserName" type="text" value="@user.UserName" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <div class="row">
+                                                        <label class="col-md-4">Name :</label>
+                                                        <div class="col-md-8">
+                                                            <textarea rows="4" cols="5" name="Name" class="form-control" required>@user.Name</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <div class="row">
+                                                        <div class="mx-auto">
+                                                            <input class="btn btn-space btn-primary" type="submit" value="Update">
+                                                            <a href="/Product/Index" class="btn btn-space btn-primary" style="color: white"><i class="fas fa-arrow-right"></i>Back</a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- end pageheader  -->
+</div>
+
+
